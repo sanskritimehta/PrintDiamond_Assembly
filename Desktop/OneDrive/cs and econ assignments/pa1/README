@@ -1,0 +1,95 @@
+/*
+ * Filename: README
+ * Author: Sanskriti Mehta
+ * Userid: cs30xkt
+ * Date: 04/21/2014
+ */
+ 
+ Description
+ -----------
+ This program outputs a diamond shaped structure with a border and specific
+ heights and widths. The height, width, diamond symbol and border symbol
+ are specified by users, and if they follow certain rules a diamond is 
+ outputed. However if certain rules such as those mentioned below in
+ the "Abnormal Output" sectoin are not followed error messages are displayed.
+
+ How to compile
+ -------------
+ type: cd ./pa1 (navigate into your the pa1 directory which includes your 
+ makefile) and then type: make
+
+ How to run
+ ----------
+ type the executable name alongwith its arguments (width, height, ASCII
+ character for border, ASCII character for diamond). For example: 
+ ./pa1 11 9 42  57
+
+ Normal output
+ -------------
+ Normal output is printed to stdout. Example:
+    [cs30xkt@ieng9]:pa1:503$ ./pa1 5 3 42 57
+    *****
+    **9**
+    *999*
+    **9**
+    *****
+
+ Abnormal output
+ ---------------
+ abnormal output is printed to stderr. This can happen in a number of cases
+ including when the string is too long, the string is not all ints,
+ the height is not less than the width, the height and width provided by
+ the user are not odd. The example below is the error message caused by
+ stderr when height is not less than width:
+    [cs30xkt@ieng9]:pa1:506$ ./pa1 3 5 42 57
+    height(5) must be less than width(3)
+
+ Testing
+ ------
+ The isOdd.s, checkRange.s, and strToLong.c files were checked by unitTests
+ that were provided. Otherwise this program as a whole was tested by the
+ pa1test executable that was provided. The ./pa1test and ./pa1 were run
+ and redirected to two different files (respectively named test1.ref.text
+ and test1.mytext). There outputs were than compared by using the command
+ diff. When no differences were shown between these two files, it meant
+ that the functions were running the same.
+
+Questions:
+
+1)
+(gdb) x/s str
+0xffbff2ae:     "9inchNails"
+
+2) 
+(gdb) p/d base
+$1 = 10
+
+3) 
+(gdb) p/x &endptr
+$2 = 0xffbfec10
+
+4) 
+(gdb) p num
+$3 = 9
+(gdb) p $3
+$4 = 9
+
+5) 
+(gdb) p *endptr
+$5 = 105 'i'
+
+6) 
+(gdb) p/s endptr
+$7 = 0xffbff2af "inchNails"
+
+7) 
+(gdb) p/d errno
+$10 = 0
+
+8) git status
+
+9) git checkout <filename>
+
+10) git diff <file1> <file2>
+
+
